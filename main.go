@@ -1,3 +1,5 @@
+//This project is a simple package to help you to automate the creation of your message broker
+//such as RabbitMQ, using the declarative way to create queues, exchanges and bindings.
 package main
 
 import (

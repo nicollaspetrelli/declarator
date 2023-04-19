@@ -1,3 +1,4 @@
+// Package rabbitmq provides a declarator for rabbitmq message broker
 package rabbitmq
 
 import (
