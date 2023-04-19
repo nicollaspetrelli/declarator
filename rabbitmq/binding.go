@@ -5,12 +5,14 @@ import (
 	"github.com/streadway/amqp"
 )
 
+// DeclareBindings declares all bindings from a list of bindings
 func (self *Declarator) DeclareBindings(bindings []Binding) {
 	for _, binding := range bindings {
 		self.Bind(binding)
 	}
 }
 
+// Bind binds a queue or exchange to another exchange
 func (self *Declarator) Bind(binding Binding) {
 	if binding.DestinationType == "queue" {
 		self.bindQueue(binding)

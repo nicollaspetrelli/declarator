@@ -4,16 +4,19 @@ import (
 	"github.com/streadway/amqp"
 )
 
+// BrokerDefinition is the structure of a broker definition json file
 type BrokerDefinition struct {
 	Queues    []Queue    `json:"queues"`
 	Exchanges []Exchange `json:"exchanges"`
 	Bindings  []Binding  `json:"bindings"`
 }
 
+// ExchangeArguments is the structure of the arguments of an exchange
 type ExchangeArguments struct {
 	AlternateExchange string `json:"alternate-exchange"`
 }
 
+// Exchange is the structure of an exchange
 type Exchange struct {
 	Name       string            `json:"name"`
 	Vhost      string            `json:"vhost"`
@@ -25,6 +28,7 @@ type Exchange struct {
 	Arguments  ExchangeArguments `json:"arguments"`
 }
 
+// QueueArguments is the structure of the arguments of a queue
 type QueueArguments struct {
 	XMessageTTL           int32  `json:"x-message-ttl"`
 	XExpires              int32  `json:"x-expires"`
@@ -39,6 +43,7 @@ type QueueArguments struct {
 	XQueueMasterLocator   string `json:"x-queue-master-locator"`
 }
 
+// Queue is the structure of a queue
 type Queue struct {
 	Name       string         `json:"name"`
 	Vhost      string         `json:"vhost"`
@@ -49,8 +54,10 @@ type Queue struct {
 	Arguments  QueueArguments `json:"arguments"`
 }
 
+// BindArguments is the structure of the arguments of a binding
 type BindArguments struct{}
 
+// Binding is the structure of a binding
 type Binding struct {
 	Source          string        `json:"source"`
 	Vhost           string        `json:"vhost"`
@@ -61,6 +68,7 @@ type Binding struct {
 	Arguments       BindArguments `json:"arguments"`
 }
 
+// GetArguments returns the arguments of an exchange
 func (self *ExchangeArguments) GetArguments() amqp.Table {
 	arguments := amqp.Table{}
 
@@ -69,6 +77,7 @@ func (self *ExchangeArguments) GetArguments() amqp.Table {
 	return arguments
 }
 
+// GetArguments returns the arguments of a queue
 func (self *QueueArguments) GetArguments() amqp.Table {
 	arguments := amqp.Table{}
 

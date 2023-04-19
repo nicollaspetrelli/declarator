@@ -1,6 +1,6 @@
 # GoLang RabbitMQ Declarator Package
 
-[![Go Version badge](https://img.shields.io/badge/Go-1.20.3-blue.svg)]() [![Version badge](https://img.shields.io/badge/Latest_Stable_Version_Tag-v1.0.0-white.svg)]()
+[![Go Reference](https://pkg.go.dev/badge/github.com/nicollasfeitosa/declarator.svg)](https://pkg.go.dev/github.com/nicollasfeitosa/declarator) [![Go Version badge](https://img.shields.io/badge/Go-1.20.3-blue.svg)]() [![Version badge](https://img.shields.io/badge/Latest_Stable_Version_Tag-v1.0.0-white.svg)]()
 
 # The Project
 

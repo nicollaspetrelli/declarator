@@ -13,12 +13,14 @@ type Declarator struct {
 	conn *amqp.Channel
 }
 
+// NewDeclarator creates a new declarator
 func NewDeclarator(conn *amqp.Channel) *Declarator {
 	return &Declarator{
 		conn: conn,
 	}
 }
 
+// DeclareExchanges declares all exchanges ,queues and bindings from a broker definition json file
 func (self *Declarator) DeclareFromFile(filePath string) {
 	jsonFile, err := os.Open(filePath)
 	if err != nil {
