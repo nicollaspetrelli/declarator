@@ -1,6 +1,6 @@
 # GoLang RabbitMQ Declarator Package
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/nicollasfeitosa/declarator.svg)](https://pkg.go.dev/github.com/nicollasfeitosa/declarator) [![Go Version badge](https://img.shields.io/badge/Go-1.20.3-blue.svg)]() [![Version badge](https://img.shields.io/badge/Latest_Stable_Version_Tag-v1.0.0-white.svg)]()
+[![Go Reference](https://pkg.go.dev/badge/github.com/nicollasfeitosa/declarator.svg)](https://pkg.go.dev/github.com/nicollasfeitosa/declarator) [![Go Version badge](https://img.shields.io/badge/Go-1.20.3-blue.svg)]() [![Version badge](https://img.shields.io/badge/Latest_Stable_Version_Tag-v1.0.1-white.svg)]()
 
 # The Project
 
@@ -102,7 +102,7 @@ func main() {
 
 How to install the package?
 
-> `go get github.com/nicollasfeitosa/declarator@v1.0.0`
+> `go get github.com/nicollasfeitosa/declarator@v1.0.1`
 
 Now you can use the package in your project following the examples above or in the main.go file in root of the project.
 
