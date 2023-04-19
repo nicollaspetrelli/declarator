@@ -1,0 +1,46 @@
+{
+    "queues": [
+        {
+            "name": "queue.name",
+            "vhost": "/",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {
+                "x-message-ttl": "number",
+                "x-expires": "number",
+                "x-overflow": "string",
+                "x-single-active-consumer": "boolean",
+                "x-dead-letter-exchange": "string",
+                "x-dead-letter-routing-key": "string",
+                "x-max-length": "number",
+                "x-max-length-bytes": "number",
+                "x-max-priority": "number",
+                "x-queue-mode=": "string",
+                "x-queue-master-locator": "string"
+            }
+        }
+    ],
+    "exchanges": [
+        {
+            "name": "exchange.name",
+            "vhost": "/",
+            "type": "string",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {
+                "alternate-exchange": "string"
+            }
+        }
+    ],
+    "bindings": [
+        {
+            "source": "string", // source name genarally exchange name
+            "vhost": "/",
+            "destination": "string", //genarally queue name but can be exchange name too
+            "destination_type": "string", // queue or exchange
+            "routing_key": "string",
+            "arguments": {}
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "queues": [
+        {
+            "name": "orders",
+            "vhost": "/",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {
+                "x-message-ttl": 120
+            }
+        }
+    ],
+    "exchanges": [
+        {
+            "name": "coffeeshop",
+            "vhost": "/",
+            "type": "topic",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "no_wait": false,
+            "arguments": {}
+        }
+    ],
+    "bindings": [
+        {
+            "source": "coffeeshop",
+            "vhost": "/",
+            "destination": "orders",
+            "destination_type": "queue",
+            "routing_key": "orders_from_coffeeshop",
+            "arguments": {}
+        }
+    ]
+}
