@@ -1,4 +1,4 @@
-module github.com/nicollasfeitosa/declarator
+module github.com/nicollaspetrelli/declarator
 
 go 1.20
 

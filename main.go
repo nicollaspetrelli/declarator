@@ -3,7 +3,7 @@
 package main
 
 import (
-	"github.com/nicollasfeitosa/declarator/rabbitmq"
+	"github.com/nicollaspetrelli/declarator/rabbitmq"
 	"github.com/streadway/amqp"
 )
 
