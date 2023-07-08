@@ -48,7 +48,7 @@ func main() {
 ### Using separated functions
  Also you can use the separated functions to declare in your code.
 
-*Example* 
+*Example*
 
 ```go
 package main
@@ -129,6 +129,21 @@ Just follow the steps below:
 - Commit your changes
 - Push your branch
 - Create a new Pull Request
+
+## Development
+
+### Requirements
+
+- Install [Golang](https://golang.org)
+- Install [GolangCI-Lint](https://golangci-lint.run/)
+- Install [docker](https://docs.docker.com/install/)
+- Install [docker-compose](https://docs.docker.com/compose/install/)
+
+### Makefile
+Please run the make target below to see the provided targets.
+```sh
+$ make help
+```
 
 # License
 
