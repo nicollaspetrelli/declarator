@@ -3,7 +3,7 @@ package rabbitmq
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"os"
 
 	log "github.com/sirupsen/logrus"
@@ -29,16 +29,16 @@ func (self *Declarator) DeclareFromFile(filePath string) {
 		return
 	}
 
+	defer jsonFile.Close() // nolint:errcheck
+
 	var definition BrokerDefinition
 
-	byteValue, _ := ioutil.ReadAll(jsonFile)
-	json.Unmarshal(byteValue, &definition)
+	byteValue, _ := io.ReadAll(jsonFile)
+	_ = json.Unmarshal(byteValue, &definition)
 
 	self.DeclareExchanges(definition.Exchanges)
 	self.DeclareQueues(definition.Queues)
 	self.DeclareBindings(definition.Bindings)
 
 	log.Info("[RabbitMQ] [Declarator] All exchanges, queues and bindings declared from file " + filePath + " successfully!")
-
-	defer jsonFile.Close()
 }
