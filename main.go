@@ -1,5 +1,5 @@
-//This project is a simple package to help you to automate the creation of your message broker
-//such as RabbitMQ, using the declarative way to create queues, exchanges and bindings.
+// This project is a simple package to help you to automate the creation of your message broker
+// such as RabbitMQ, using the declarative way to create queues, exchanges and bindings.
 package main
 
 import (
@@ -14,13 +14,13 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	defer connectRabbitMQ.Close()
+	defer connectRabbitMQ.Close() // nolint:errcheck
 
 	channelRabbitMQ, err := connectRabbitMQ.Channel()
 	if err != nil {
 		panic(err)
 	}
-	defer channelRabbitMQ.Close()
+	defer channelRabbitMQ.Close() // nolint:errcheck
 
 	declarator := rabbitmq.NewDeclarator(channelRabbitMQ)
 

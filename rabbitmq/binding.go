@@ -31,7 +31,6 @@ func (self *Declarator) bindQueue(binding Binding) {
 		binding.NoWait,
 		amqp.Table{},
 	)
-
 	if err != nil {
 		log.Error("[RabbitMQ] [Binding] Error when trying bind queue " + err.Error())
 		return
@@ -48,7 +47,6 @@ func (self *Declarator) bindExchange(binding Binding) {
 		binding.NoWait,
 		amqp.Table{},
 	)
-
 	if err != nil {
 		log.Error("[RabbitMQ] [Binding] Error when trying bind exchange " + err.Error())
 		return
