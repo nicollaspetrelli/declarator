@@ -4,7 +4,7 @@ package main
 
 import (
 	"github.com/nicollaspetrelli/declarator/rabbitmq"
-	"github.com/streadway/amqp"
+	amqp "github.com/rabbitmq/amqp091-go"
 )
 
 func main() {

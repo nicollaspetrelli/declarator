@@ -3,18 +3,15 @@ version: '3.9'
 services:
   rabbit:
     build: env/
-    container_name: "rabbit-mqtt"
+    container_name: "rabbitmq"
     environment:
       RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
     ports:
       - "${RABBITMQ_PORT}:5672"
       - "${RABBITMQ_API_PORT}:15672"
-      - "${RABBITMQ_MQTT_PORT}:1883"
     networks:
-      rabbit.mqtt:
-        aliases:
-          - "rabbit.mqtt.broker"
+      rabbitmq:
 
 networks:
-  rabbit.mqtt:
+  rabbitmq:
