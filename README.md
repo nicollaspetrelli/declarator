@@ -17,13 +17,14 @@ I created this package to help me to automate the creation of my message broker,
 Actually, this package has two ways to declare your message broker.
 
 ### Using a file
+
 This package will read a json file with the declarations and will create the queues, exchanges and bindings.
 
 The format of declaration file is the same as RabbitMQ export file.
 
 > Has a example of declaration file is in the examples folder, If you want more information about the format of declaration file can be found in the [RabbitMQ Documentation](https://www.rabbitmq.com/management-cli.html#export-import)
 
-*Example*
+_Example_
 
 ```go
 package main
@@ -45,10 +46,12 @@ func main() {
     declarator.DeclareFromFile("examples/hello-world-broker.json")
 }
 ```
-### Using separated functions
- Also you can use the separated functions to declare in your code.
 
-*Example*
+### Using separated functions
+
+Also you can use the separated functions to declare in your code.
+
+_Example_
 
 ```go
 package main
@@ -110,13 +113,9 @@ Now you can use the package in your project following the examples above or in t
 
 # Future Work
 
-- [x] Add a feature to create and read json file with the declarations
-- [x] Add support to bindings arguments
+- [ ] Make RabbitMQ Connection optional, passing DSN and create a new connection
 - [ ] Add unit tests
 - [ ] Add integration tests
-- [ ] Add examples of usage
-- [ ] Add documentation
-- [ ] Add CI/CD
 
 # Contributing
 
@@ -140,7 +139,9 @@ Just follow the steps below:
 - Install [docker-compose](https://docs.docker.com/compose/install/)
 
 ### Makefile
+
 Please run the make target below to see the provided targets.
+
 ```sh
 $ make help
 ```

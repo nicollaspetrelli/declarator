@@ -1,8 +1,8 @@
 package rabbitmq
 
 import (
+	amqp "github.com/rabbitmq/amqp091-go"
 	log "github.com/sirupsen/logrus"
-	"github.com/streadway/amqp"
 )
 
 // DeclareBindings declares all bindings from a list of bindings

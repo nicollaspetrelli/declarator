@@ -1,8 +1,6 @@
 package rabbitmq
 
-import (
-	"github.com/streadway/amqp"
-)
+import amqp "github.com/rabbitmq/amqp091-go"
 
 // BrokerDefinition is the structure of a broker definition json file
 type BrokerDefinition struct {
