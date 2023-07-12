@@ -3,8 +3,8 @@ package rabbitmq
 import log "github.com/sirupsen/logrus"
 
 // DeclareQueue declares a queue
-func (self *Declarator) DeclareQueue(queue Queue) {
-	declaredQueue, err := self.conn.QueueDeclare(
+func (d *Declarator) DeclareQueue(queue Queue) {
+	declaredQueue, err := d.conn.QueueDeclare(
 		queue.Name,
 		queue.Durable,
 		queue.AutoDelete,
@@ -21,8 +21,8 @@ func (self *Declarator) DeclareQueue(queue Queue) {
 }
 
 // DeclareQueues declares all queues from a list of queues
-func (self *Declarator) DeclareQueues(queues []Queue) {
+func (d *Declarator) DeclareQueues(queues []Queue) {
 	for _, queue := range queues {
-		self.DeclareQueue(queue)
+		d.DeclareQueue(queue)
 	}
 }

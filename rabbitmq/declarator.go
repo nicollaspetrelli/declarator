@@ -22,7 +22,7 @@ func NewDeclarator(conn *amqp.Channel) *Declarator {
 }
 
 // DeclareExchanges declares all exchanges ,queues and bindings from a broker definition json file
-func (self *Declarator) DeclareFromFile(filePath string) {
+func (d *Declarator) DeclareFromFile(filePath string) {
 	jsonFile, err := os.Open(filePath)
 	if err != nil {
 		log.Error("[RabbitMQ] [Declarator] Error when trying to open file " + filePath)
@@ -36,9 +36,9 @@ func (self *Declarator) DeclareFromFile(filePath string) {
 	byteValue, _ := io.ReadAll(jsonFile)
 	_ = json.Unmarshal(byteValue, &definition)
 
-	self.DeclareExchanges(definition.Exchanges)
-	self.DeclareQueues(definition.Queues)
-	self.DeclareBindings(definition.Bindings)
+	d.DeclareExchanges(definition.Exchanges)
+	d.DeclareQueues(definition.Queues)
+	d.DeclareBindings(definition.Bindings)
 
 	log.Info("[RabbitMQ] [Declarator] All exchanges, queues and bindings declared from file " + filePath + " successfully!")
 }
