@@ -1,6 +1,6 @@
 # GoLang RabbitMQ Declarator Package
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/nicollaspetrelli/declarator.svg)](https://pkg.go.dev/github.com/nicollaspetrelli/declarator) [![Go Version badge](https://img.shields.io/badge/Go-1.20.5-blue.svg)]()
+[![Go Reference](https://pkg.go.dev/badge/github.com/nicollaspetrelli/declarator.svg)](https://pkg.go.dev/github.com/nicollaspetrelli/declarator) [![Go Report Card](https://goreportcard.com/badge/github.com/nicollaspetrelli/declarator)](https://goreportcard.com/report/github.com/nicollaspetrelli/declarator) [![Go Version badge](https://img.shields.io/badge/Go-1.20.5-blue.svg)]()
 
 # The Project
 
