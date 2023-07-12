@@ -6,25 +6,25 @@ import (
 )
 
 // DeclareBindings declares all bindings from a list of bindings
-func (self *Declarator) DeclareBindings(bindings []Binding) {
+func (d *Declarator) DeclareBindings(bindings []Binding) {
 	for _, binding := range bindings {
-		self.Bind(binding)
+		d.Bind(binding)
 	}
 }
 
 // Bind binds a queue or exchange to another exchange
-func (self *Declarator) Bind(binding Binding) {
+func (d *Declarator) Bind(binding Binding) {
 	if binding.DestinationType == "queue" {
-		self.bindQueue(binding)
+		d.bindQueue(binding)
 	}
 
 	if binding.DestinationType == "exchange" {
-		self.bindExchange(binding)
+		d.bindExchange(binding)
 	}
 }
 
-func (self *Declarator) bindQueue(binding Binding) {
-	err := self.conn.QueueBind(
+func (d *Declarator) bindQueue(binding Binding) {
+	err := d.conn.QueueBind(
 		binding.Destination,
 		binding.RoutingKey,
 		binding.Source,
@@ -39,8 +39,8 @@ func (self *Declarator) bindQueue(binding Binding) {
 	log.Warn("[RabbitMQ] [Binding] Queue " + binding.Destination + " binded with exchange " + binding.Source)
 }
 
-func (self *Declarator) bindExchange(binding Binding) {
-	err := self.conn.ExchangeBind(
+func (d *Declarator) bindExchange(binding Binding) {
+	err := d.conn.ExchangeBind(
 		binding.Destination,
 		binding.RoutingKey,
 		binding.Source,

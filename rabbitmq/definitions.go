@@ -67,29 +67,29 @@ type Binding struct {
 }
 
 // GetArguments returns the arguments of an exchange
-func (self *ExchangeArguments) GetArguments() amqp.Table {
+func (ea *ExchangeArguments) GetArguments() amqp.Table {
 	arguments := amqp.Table{}
 
-	addNonEmpty(arguments, "alternate-exchange", self.AlternateExchange, "string")
+	addNonEmpty(arguments, "alternate-exchange", ea.AlternateExchange, "string")
 
 	return arguments
 }
 
 // GetArguments returns the arguments of a queue
-func (self *QueueArguments) GetArguments() amqp.Table {
+func (qa *QueueArguments) GetArguments() amqp.Table {
 	arguments := amqp.Table{}
 
-	addNonEmpty(arguments, "x-message-ttl", self.XMessageTTL, "int32")
-	addNonEmpty(arguments, "x-expires", self.XExpires, "int32")
-	addNonEmpty(arguments, "x-overflow", self.XOverflow, "string")
-	addNonEmpty(arguments, "x-single-active-consumer", self.XSingleActiveConsumer, "bool")
-	addNonEmpty(arguments, "x-dead-letter-exchange", self.XDeadLetterExchange, "string")
-	addNonEmpty(arguments, "x-dead-letter-routing-key", self.XDeadLetterRoutingKey, "string")
-	addNonEmpty(arguments, "x-max-length", self.XMaxLength, "int32")
-	addNonEmpty(arguments, "x-max-length-bytes", self.XMaxLengthBytes, "int32")
-	addNonEmpty(arguments, "x-max-priority", self.XMaxPriority, "int32")
-	addNonEmpty(arguments, "x-queue-mode", self.XQueueMode, "string")
-	addNonEmpty(arguments, "x-queue-master-locator", self.XQueueMasterLocator, "string")
+	addNonEmpty(arguments, "x-message-ttl", qa.XMessageTTL, "int32")
+	addNonEmpty(arguments, "x-expires", qa.XExpires, "int32")
+	addNonEmpty(arguments, "x-overflow", qa.XOverflow, "string")
+	addNonEmpty(arguments, "x-single-active-consumer", qa.XSingleActiveConsumer, "bool")
+	addNonEmpty(arguments, "x-dead-letter-exchange", qa.XDeadLetterExchange, "string")
+	addNonEmpty(arguments, "x-dead-letter-routing-key", qa.XDeadLetterRoutingKey, "string")
+	addNonEmpty(arguments, "x-max-length", qa.XMaxLength, "int32")
+	addNonEmpty(arguments, "x-max-length-bytes", qa.XMaxLengthBytes, "int32")
+	addNonEmpty(arguments, "x-max-priority", qa.XMaxPriority, "int32")
+	addNonEmpty(arguments, "x-queue-mode", qa.XQueueMode, "string")
+	addNonEmpty(arguments, "x-queue-master-locator", qa.XQueueMasterLocator, "string")
 
 	return arguments
 }

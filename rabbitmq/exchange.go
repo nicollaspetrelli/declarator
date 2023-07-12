@@ -3,8 +3,8 @@ package rabbitmq
 import log "github.com/sirupsen/logrus"
 
 // DeclareExchange declares an exchange
-func (self *Declarator) DeclareExchange(exchange Exchange) {
-	err := self.conn.ExchangeDeclare(
+func (d *Declarator) DeclareExchange(exchange Exchange) {
+	err := d.conn.ExchangeDeclare(
 		exchange.Name,
 		exchange.Type,
 		exchange.Durable,
@@ -21,8 +21,8 @@ func (self *Declarator) DeclareExchange(exchange Exchange) {
 }
 
 // DeclareExchanges declares all exchanges from a list of exchanges
-func (self *Declarator) DeclareExchanges(exchange []Exchange) {
+func (d *Declarator) DeclareExchanges(exchange []Exchange) {
 	for _, exchange := range exchange {
-		self.DeclareExchange(exchange)
+		d.DeclareExchange(exchange)
 	}
 }
